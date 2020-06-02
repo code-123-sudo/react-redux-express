@@ -15,8 +15,7 @@ const logger = createLogger({
 const router = routerMiddleware(hashHistory);
 
 const enhancer = compose(
-  applyMiddleware(thunk, router, logger),
-  DevTools.instrument(),
+  applyMiddleware(thunk, router),
   persistState(
     window.location.href.match(
       /[?&]debug_session=([^&]+)\b/
